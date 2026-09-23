@@ -1,18 +1,21 @@
 // Colors
 $color-white: #ffffff;
+$color-black: #202020;
+$color-gray: #666666;
+$color-gray-light: #e6e6e6;
 
+$color-green: #b7d52b;
+$color-green-dark: #739e00;
 
-
-
-$color-black-50: rgba(0, 0, 0, 0.5);
-
+$color-red: #ed1c24;
+$color-cream: #fffdf2;
 
 // Typography
-$ff-main: "Noto Sans", "Arial", sans-serif;
+$ff-main: "Noto Sans", Arial, sans-serif;
 
 // Viewport
 $vp-tablet: 1023px;
 $vp-mobile: 767px;
 
 // Animation
-$transition-300: ease-in 0.3s;
+$transition-300: ease 0.3s;
