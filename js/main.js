@@ -20,3 +20,50 @@ const productVariants = {
     price: '6 320 ₽',
   },
 };
+
+const weightsContainer = document.querySelector('.product__weights');
+const articleElement = document.querySelector('[data-product-article]');
+const oldPriceElement = document.querySelector('[data-old-price]');
+const currentPriceElement = document.querySelector('[data-current-price]');
+
+const updateProductVariant = (button) => {
+  const { weight } = button.dataset;
+  const variant = productVariants[weight];
+
+  if (!variant) {
+    return;
+  }
+
+  const activeButton = weightsContainer.querySelector(
+    '.product__weight--active'
+  );
+
+  if (activeButton) {
+    activeButton.classList.remove('product__weight--active');
+    activeButton.setAttribute('aria-pressed', 'false');
+  }
+
+  button.classList.add('product__weight--active');
+  button.setAttribute('aria-pressed', 'true');
+
+  articleElement.textContent = variant.article;
+  oldPriceElement.textContent = variant.oldPrice;
+  currentPriceElement.textContent = variant.price;
+};
+
+if (
+  weightsContainer &&
+  articleElement &&
+  oldPriceElement &&
+  currentPriceElement
+) {
+  weightsContainer.addEventListener('click', (event) => {
+    const button = event.target.closest('.product__weight');
+
+    if (!button || !weightsContainer.contains(button)) {
+      return;
+    }
+
+    updateProductVariant(button);
+  });
+}
