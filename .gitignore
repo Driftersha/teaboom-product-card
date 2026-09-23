@@ -1,0 +1,17 @@
+# macOS
+.DS_Store
+__MACOSX/
+
+# IDE
+.vscode/
+.idea/
+
+# Dependencies
+node_modules/
+
+# Logs
+*.log
+
+# Environment variables
+.env
+.env.*
